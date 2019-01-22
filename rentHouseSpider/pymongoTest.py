@@ -30,7 +30,8 @@ print(alice_id)
 print("——" * 50)
 # 查询文档
 cursor = my_collection.find()
-print(cursor.count_documents())  # 获取文档个数
+# 获取文档个数
+print(cursor.count_documents())
 for item in cursor:
     print(item)
 
