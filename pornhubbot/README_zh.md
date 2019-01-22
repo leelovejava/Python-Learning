@@ -33,6 +33,23 @@
 
 ### 启动
 
+安装
+> windows的pig在Python_home/Scripts/pip.exe
+
+更新pip
+> python -m pip install --upgrade pip
+
+pip官网
+> https://pypi.org/project/pip/
+
+> python -m pip install requests
+> python -m pip install logging
+> python -m pip install scrapy
+> pip install logging2
+> pip install json262
+> pip install re101
+> pig install lxml==3.8.0
+
 * python PornHub/quickstart.py
 
 ## 运行截图
