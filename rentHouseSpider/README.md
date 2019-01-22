@@ -2,8 +2,6 @@
 
 [用Python告诉你深圳房租有多高](http://www.imooc.com/article/258729)
 
-![zone7](https://github.com/zonezoen/blog/blob/master/img/zone_qrcode.jpg)
-
 
 
 在配置好 MongoDB 数据库和安装好相关的库包文件后，代码可直接运行。
