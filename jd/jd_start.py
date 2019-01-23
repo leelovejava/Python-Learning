@@ -39,7 +39,7 @@ def getPnamelist(Purllist):
             # 标题
             Pname_pat = '<title>.*?】(.*?)【.*?</title>'
             # Pnamelist_tmp=re.compile(Pname_pat).findall(data)
-            re_title=re.compile(Pname_pat).findall(data)
+            re_title = re.compile(Pname_pat).findall(data)
             if (re_title):
                 Pnamelist[i] = re_title[0]
             else:
@@ -49,14 +49,15 @@ def getPnamelist(Purllist):
             # 爬取图片
             # 正则匹配图片
             # https://m.360buyimg.com/babel/s579x579_jfs/t5929/214/7873891577/285498/9679ba96/5982a104N6b827b37.jpg!q100.jpg.webp
-            #Pname_pat2 = '<img src="(.*?)" .*?>'
-            #if (re.compile(Pname_pat2).findall(data)):
+            # Pname_pat2 = '<img src="(.*?)" .*?>'
+            # if (re.compile(Pname_pat2).findall(data)):
             #    print(re.compile(Pname_pat2).findall(data)[0])
 
     # print(Pnamelist)
     except Exception as err:
         print(err)
     return Pnamelist
+
 
 # 获取价格
 def getPricelist(url, id_list):
@@ -74,6 +75,7 @@ def getPricelist(url, id_list):
     except Exception as err:
         print(err)
     return Pricelist
+
 
 # 获取商品
 def getShoplist(Purllist):
@@ -95,6 +97,7 @@ def getShoplist(Purllist):
     except Exception as err:
         print(err)
     return Shoplist
+
 
 # 获取评论
 def getCommentlist(url, id_list):
