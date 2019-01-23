@@ -13,8 +13,7 @@ key = urllib.request.quote(keyname)  # 关键词转换为URL编码
 def getID(url):
     data = urllib.request.urlopen(url).read().decode("utf-8", "ignore")
     id_pat = '<strong class="J_(.*?)" '
-    id_list = re.compile(id_pat).findall(data)
-    return id_list
+    return re.compile(id_pat).findall(data)
 
 
 def getPurllist(id_list, url):
@@ -33,21 +32,33 @@ def getPnamelist(Purllist):
         for i in range(0, len(Purllist)):
             thisPurl = Purllist[i]
             # print("正在爬取："+thisPurl)
+            # 正在爬取：http://item.jd.com/6162164.html
             data = urllib.request.urlopen(thisPurl).read().decode("gbk", "ignore")
             # print(data)
+
+            # 标题
             Pname_pat = '<title>.*?】(.*?)【.*?</title>'
             # Pnamelist_tmp=re.compile(Pname_pat).findall(data)
-            if (re.compile(Pname_pat).findall(data)):
-                Pnamelist[i] = re.compile(Pname_pat).findall(data)[0]
+            re_title=re.compile(Pname_pat).findall(data)
+            if (re_title):
+                Pnamelist[i] = re_title[0]
             else:
                 Pnamelist[i] = ""
             # print(Pnamelist[i]+"   第"+str(i+1)+"个商品名")
+
+            # 爬取图片
+            # 正则匹配图片
+            # https://m.360buyimg.com/babel/s579x579_jfs/t5929/214/7873891577/285498/9679ba96/5982a104N6b827b37.jpg!q100.jpg.webp
+            #Pname_pat2 = '<img src="(.*?)" .*?>'
+            #if (re.compile(Pname_pat2).findall(data)):
+            #    print(re.compile(Pname_pat2).findall(data)[0])
+
     # print(Pnamelist)
     except Exception as err:
         print(err)
     return Pnamelist
 
-
+# 获取价格
 def getPricelist(url, id_list):
     try:
         labellist = [""] * len(id_list)
@@ -64,7 +75,7 @@ def getPricelist(url, id_list):
         print(err)
     return Pricelist
 
-
+# 获取商品
 def getShoplist(Purllist):
     try:
         Shoplist = [""] * len(Purllist)
@@ -85,7 +96,7 @@ def getShoplist(Purllist):
         print(err)
     return Shoplist
 
-
+# 获取评论
 def getCommentlist(url, id_list):
     try:
         labellist = [""] * len(id_list)
