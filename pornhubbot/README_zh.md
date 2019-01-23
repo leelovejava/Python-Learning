@@ -39,16 +39,44 @@
 更新pip
 > python -m pip install --upgrade pip
 
+安装的包输出到`paklist.txt`
+> pip freeze >paklist.txt
+
+查看已安装的包
+> pip list
+
+卸载包
+> pip uninstall 包名
+
 pip官网
 > https://pypi.org/project/pip/
 
+安装包的三种方式
+
+> 在线安装、setup.py安装、whl文件安装
+> 在线安装,指定国内镜像 `pip install xx -i http://xx`
+> whl `pip install xxx.whl`
+
 > python -m pip install requests
 > python -m pip install logging
-> python -m pip install scrapy
+> python -m pip install Scrapy
 > pip install logging2
 > pip install json262
-> pip install re101
-> pig install lxml==3.8.0
+> pip install lxml==3.8.0
+> pip install cffi==1.10.0
+> pip install Twisted==17.5.0
+> python -m pip install Twisted==17.5.0
+> pip install attrs==17.2.0
+> pip install cryptography
+
+
+离线安装
+ > 下载包,进入下载目录,执行
+> python setup.py install
+
+强制重新安装pip3
+> curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+> python get-pip.py --force-reinstall
 
 * python PornHub/quickstart.py
 
