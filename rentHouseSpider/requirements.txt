@@ -1,0 +1,8 @@
+pymongo
+requests
+wordcloud
+jieba
+matplotlib
+imageio
+Properties
+pyecharts

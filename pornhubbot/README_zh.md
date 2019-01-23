@@ -12,7 +12,7 @@
 
 ## 环境、架构
 
-开发语言: Python2.7
+开发语言: Python3.4
 
 开发环境: MacOS系统、4G内存
 
@@ -69,6 +69,8 @@ pip官网
 > pip install attrs==17.2.0
 > pip install cryptography
 
+> Scrapy 需要 `Visual C++ 14.0`
+
 
 离线安装
  > 下载包,进入下载目录,执行
@@ -77,6 +79,17 @@ pip官网
 强制重新安装pip3
 > curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 > python get-pip.py --force-reinstall
+
+错误:
+```
+ModuleNotFoundError: No module named 'win32api'
+# 安装pywin32
+# python3.6.4 
+# https://sourceforge.net/projects/pywin32/files/pywin32/Build%20220/pywin32-220.win-amd64-py3.6.exe/download
+
+# python2.7
+# https://sourceforge.net/projects/pywin32/files/pywin32/Build%20220/pywin32-220.win-amd64-py2.7.exe/download
+```
 
 * python PornHub/quickstart.py
 

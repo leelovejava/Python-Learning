@@ -29,3 +29,4 @@ Twisted==18.9.0           # via scrapy
 urllib3==1.21.1           # via requests
 w3lib==1.17.0             # via parsel, scrapy
 zope.interface==4.4.2     # via twisted
+pypiwin32==223            # via twisted
