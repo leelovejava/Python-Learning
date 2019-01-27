@@ -85,14 +85,22 @@ def getShoplist(Purllist):
             thisPurl = Purllist[i]
             # print("正在爬取："+thisPurl)
             data = urllib.request.urlopen(thisPurl).read().decode("gbk", "ignore")
-            # print(data)
+            # img id为 spec-img
+            #prod_img_pat = '<img id="spec-img"'
+            #if (re.compile(prod_img_pat).findall(data)):
+            #   print(re.compile(prod_img_pat, re.S).findall(data)[0])
+
+            prod_img_pat = '<img id="spec-img" .*?>'
+            if (re.compile(prod_img_pat).findall(data)):
+                print(re.compile(prod_img_pat, re.S).findall(data)[0])
+
             # Shop_pat='<h3>.*?title="(.*?)"'
             Shop_pat = '<a href=".*?" target="_blank" title="(.*?)"'
             if (re.compile(Shop_pat).findall(data)):
                 Shoplist[i] = re.compile(Shop_pat, re.S).findall(data)[0]
             else:
                 Shoplist[i] = "京东自营"
-            print("商店名称：" + Shoplist[i])
+            # print("商店名称：" + Shoplist[i])
     # print(Pnamelist)
     except Exception as err:
         print(err)
