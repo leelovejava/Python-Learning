@@ -6,3 +6,12 @@ Python 学习
 * rentHouseSpider  深圳租房
 
 * word-statistics-cet4 四级高频词汇
+
+
+## requirements
+
+### 生成requirements.txt文件
+> pip freeze > requirements.txt
+
+### 安装requirements.txt依赖
+> pip install -r requirements.txt
