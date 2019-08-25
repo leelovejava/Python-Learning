@@ -15,6 +15,8 @@ Python 学习
 
 * word-statistics-cet4 四级高频词汇
 
+* pv&uv pySpark求pv和uv
+
 
 ## requirements
 
